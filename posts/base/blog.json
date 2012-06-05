@@ -1,0 +1,10 @@
+{
+    "id": "base",
+    "name": "Base",
+    "description": "This is a base blog.json file.",
+    "file": "base.md",
+    "author": "dshaw",
+    "keywords": [
+        "summerofnodejs"
+    ]
+}

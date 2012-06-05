@@ -1,0 +1,69 @@
+<html>
+<head>
+  <title>Turtle Test</title>
+  <meta charset="utf-8">
+<style>
+  body {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0em;
+    padding: 0em;
+  }
+</style>
+</head>
+
+<body>
+
+  <p><button id="apply">Apply Now <code>→</code></button>Image courtesy of <a href="http://substack.net">substack.net</a></p>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/lib/jquery-1.7.1.min.js"><\/script>')</script>
+<script src="/js/lib/sprite.js"></script>
+<script>
+// create the Scene object
+var scene = sjs.Scene({ 
+  w:$(document).width() -0
+, h:$(document).height()-0
+})
+
+// load the images in parallel. When all the images are
+// ready, the callback function is called.
+scene.loadImages(['/img/turtle.png'], function() {
+  // create the Sprite object;
+  var sp = scene.Sprite('/img/turtle.png')
+
+  // sp.scale(2)
+  // sp.setOpacity(0.8)
+  // sp.offset(50, 50)
+  var START_X = -1525
+  var START_Y = -320
+  sp.move(START_X, START_Y)
+  sp.rotate(3.14 / 4)
+  sp.update()
+
+  $('#apply').hover(moveTurtle)
+  function moveTurtle() {
+    var vel = 1
+    var velincr = setInterval(function() {
+      vel += 4
+    }, 50)
+    
+    var interval = setInterval(function() {
+      sp.move(vel, 0)
+      if (sp.x > scene.w) { // stop, reset everything
+        vel = 1
+        clearInterval(interval)
+        clearInterval(velincr)
+        // put at correct starting spot!
+        sp.x = START_X
+        sp.y = START_Y
+      }
+      sp.update()
+      
+    }, 1000/60)
+  }
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "summerofnodejs-blog",
+  "version": "0.0.1",
+  "description": "Voxer Summer of Node.js Blog",
+  "keywords": [
+    "blog",
+    "summerofnodejs"
+  ],
+  "author": "Daniel D. Shaw <dshaw@dshaw.com> (http://dshaw.com)",
+  "homepage": "http://summerofnodejs.com",
+  "repository": {
+    "url": "https://github.com/voxer/summerofnodejs-blog"
+  },
+  "main": "./blog",
+  "dependencies": {
+    "blogit": "0.0.4"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}

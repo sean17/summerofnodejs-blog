@@ -1,0 +1,331 @@
+/*  Less Framework 4
+  http://lessframework.com
+  by Joni Korpi
+  License: http://opensource.org/licenses/mit-license.php */
+
+
+/*  Resets
+  ------  */
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em,
+img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figure, figcaption, hgroup,
+menu, footer, header, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+article, aside, canvas, figure, figure img, figcaption, hgroup,
+footer, header, nav, section, audio, video {
+  display: block;
+}
+
+a img { border: 0; text-decoration: none; }
+
+
+
+/*  Typography presets
+  ------------------  */
+
+.gigantic {
+  font-size: 110px;
+  line-height: 120px;
+  letter-spacing: -2px;
+}
+
+.huge, h1 {
+  font-size: 68px;
+  line-height: 72px;
+  letter-spacing: -1px;
+}
+
+.large, h2 {
+  font-size: 42px;
+  line-height: 48px;
+}
+
+.bigger, h3 {
+  font-size: 26px;
+  line-height: 36px;
+}
+
+.big, h4 {
+  font-size: 22px;
+  line-height: 30px;
+}
+
+body {
+  font: 16px/24px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.small, small {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.quiet {
+  color: #ccc;
+}
+
+/* Selection colours (easy to forget) royal purple: #7851A9 */
+::selection     {background: #8cc84b; color: #fff; text-shadow: none;}
+::-moz-selection  {background: #8cc84b; color: #fff; text-shadow: none;}
+img::selection    {background: transparent;}
+img::-moz-selection {background: transparent;}
+body {-webkit-tap-highlight-color: #8cc84b;}
+
+p {
+  margin-bottom: 24px;
+  max-width: 33em; /* more legible! */
+}
+
+/*    Default Layout: 992px.
+    Gutters: 24px.
+    Outer margins: 48px.
+    Leftover space for scrollbars @1024px: 32px.
+-------------------------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8      9      10
+px      68    160    252    344    436    528    620    712    804    896    */
+
+body {
+  width: 896px;
+  padding: 72px 48px 84px;
+  /* background: rgb(232,232,232);*/
+  color: rgb(60,60,60);
+  /* Stops Mobile Safari from auto-adjusting font-sizes */
+  -webkit-text-size-adjust: 100%;
+}
+
+/*dont need it to so very big. table layout is wide enough.*/
+body {
+  width: 712px;
+  padding: 48px 28px 60px;
+}
+
+
+
+/*    Tablet Layout: 768px.
+    Gutters: 24px.
+    Outer margins: 28px.
+    Inherits styles from: Default Layout.
+-----------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8
+px      68    160    252    344    436    528    620    712    */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+  body {
+    width: 712px;
+    padding: 48px 28px 60px;
+  }
+}
+
+
+
+/*    Mobile Layout: 320px.
+    Gutters: 24px.
+    Outer margins: 34px.
+    Inherits styles from: Default Layout.
+---------------------------------------------
+cols    1     2      3
+px      68    160    252    */
+
+@media only screen and (max-width: 767px) {
+
+  body {
+    width: 252px;
+    padding: 48px 34px 60px;
+  }
+
+  .logo {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  .logos a {
+    display: block;
+    min-width: 150px;
+  }
+
+  #voxer-logo {}
+
+  #nodejs-logo {
+    width: 150px;
+    height: 111px;
+    margin-top: 20px;
+  }
+
+}
+
+
+
+/*    Wide Mobile Layout: 480px.
+    Gutters: 24px.
+    Outer margins: 22px.
+    Inherits styles from: Default Layout, Mobile Layout.
+------------------------------------------------------------
+cols    1     2      3      4      5
+px      68    160    252    344    436    */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+  body {
+    width: 436px;
+    padding: 36px 22px 48px;
+  }
+
+}
+
+/**/
+/* button heavily inspired by github.com/dtrejo/aristo */
+/**/
+a.awesome,
+button {
+  margin: 5px;
+  -khtml-appearance: none;
+  -moz-appearance: none;
+  background: none;
+  padding: 4px 9px;
+  font-weight: bold;
+  font-size: 1em;
+  color: #4F4F4F;
+  text-shadow: 0px 1px 1px #fff;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: #AFAFAF #9A9A9A #828282 #9A9A9A;
+
+  background: #E9E9E9;
+  background: -webkit-gradient(linear, left top, left bottom, from(#E9E9E9), to(#B8B8B7));
+  background: -moz-linear-gradient(top, #E9E9E9, #B8B8B7);
+  -webkit-box-shadow: inset 0 1px 1px #F5F5F5;
+  -moz-box-shadow: inset 0 1px 1px #F5F5F5;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  cursor: pointer;
+  -webkit-user-select: none;
+  text-decoration: none;
+}
+
+a.awesoome:hover,
+a.awesoome:focus,
+button:hover,
+button:focus {
+  box-shadow: 0 0 7px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.5);
+  -webkit-box-shadow: 0 0 7px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.5);
+  -moz-box-shadow: 0 0 7px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.5);
+}
+
+a.awesome.green,
+button.green {
+  color: #374C29;
+  background: #A9CD7E;
+  background: -webkit-gradient(linear, left top, left bottom, from(#A9CD7E), to(#81A558));
+  background: -moz-linear-gradient(top, #A9CD7E, #81A558);
+  border-color: #92BA63 #8AB05E #81A558 #8AB05E;
+  -webkit-box-shadow: inset 0 1px 1px #CDE2B2;
+  -moz-box-shadow: inset 0 1px 1px #CDE2B2;
+  text-shadow: 0 1px 1px #C9DBB4;
+}
+
+a.awesome.green:hover, a.awesome.green:focus,
+button.green:hover, button.green:focus {
+  -webkit-box-shadow: 0 5px 15px #81A558, inset 0 1px 0 rgba(255,255,255,0.5);
+     -moz-box-shadow: 0 5px 15px #81A558, inset 0 1px 0 rgba(255,255,255,0.5);
+       -o-box-shadow: 0 5px 15px #81A558, inset 0 1px 0 rgba(255,255,255,0.5);
+          box-shadow: 0 5px 15px #81A558, inset 0 1px 0 rgba(255,255,255,0.5);
+}
+
+a.awesome:active:not(:disabled),
+button:active:not(:disabled) {
+  border-color: #B6B6B6 #989898 #AEAEAE #989898;
+  background: #B6B6B6;
+  background: -webkit-gradient(linear, left top, left bottom, from(#B6B6B6), to(#E6E6E6));
+  background: -moz-linear-gradient(top, #B6B6B6, #E6E6E6);
+  -webkit-box-shadow: inset 0 -1px 1px #F4F4F4;
+  -moz-box-shadow: inset 0 -1px 1px #F4F4F4;
+}
+
+a.awesome.green:active:not(:disabled),
+button.green:active:not(:disabled) {
+  color: #374C29;
+  background: #81A558;
+  background: -webkit-gradient(linear, left top, left bottom, from(#81A558), to(#A9CD7E));
+  background: -moz-linear-gradient(top, #81A558, #A9CD7E);
+  border-color: #92BA63 #8AB05E #81A558 #8AB05E;
+  -webkit-box-shadow: inset 0px -1px 1px #CDE2B2;
+  -moz-box-shadow: inset 0px -1px 1px #CDE2B2;
+}
+
+a.awesome:disabled, a.awesome:hover:disabled,
+button:disabled, button:hover:disabled {
+  opacity: 0.5;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  cursor: default;
+}
+/**/
+/* END button heavily inspired by github.com/dtrejo/aristo */
+/**/
+
+body {
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+a {
+  color: #71829E;
+  cursor: pointer;
+}
+
+p, .logos {
+  margin-bottom: 24px;
+}
+.logos a:last-child img {
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
+}
+
+p {
+/* more legible! */
+  max-width: 33em;
+}
+
+h1.logo a {
+  font-family: 'Baumans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  color: #333;
+}
+.logo {
+  margin-bottom: 12px;
+}
+
+.colors {
+  /*light brown node bg*/
+  background-color: rgba(88, 82, 68, 255); /* #585244 */
+
+  /*dark brown node bg*/
+  background-color: rgba(53, 49, 41, 255); /* #353129 */
+
+  /*node's green*/
+  color: rgba(140, 200, 75, 255); /* #8cc84b */
+}
+
+#sjs0 {
+  position: absolute!important;
+  top: 90px!important;
+  left: 0px!important;
+  z-index: -1000;
+}
