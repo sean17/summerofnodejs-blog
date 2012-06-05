@@ -7,6 +7,10 @@ http://summerofnodejs.com
 ## Run
 
 ```
+# local debug
+node . 8000
+
+# run on production using the default port 80
 node blog
 ``
 
