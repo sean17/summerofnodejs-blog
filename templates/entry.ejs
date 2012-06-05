@@ -1,1 +1,8 @@
-<article id="<%= entry.id %>" data-author="<%= entry.author %>"><%- entry.html %></article>
+<article id="<%= entry.id %>" data-author="<%= entry.author %>">
+<%- entry.html %>
+  <footer>
+    <a href="https://twitter.com/<%= entry.author %>" class="twitter-follow-button" data-show-count="false">Follow @<%= entry.author %></a>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="summerofnodejs" data-lang="en">Tweet</a>
+  </footer>
+</article>
+
