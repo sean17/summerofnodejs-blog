@@ -13,7 +13,7 @@
   },
   "main": "./blog",
   "dependencies": {
-    "blogit": "0.0.4"
+    "blogit": "~0.0.4"
   },
   "devDependencies": {},
   "optionalDependencies": {},
